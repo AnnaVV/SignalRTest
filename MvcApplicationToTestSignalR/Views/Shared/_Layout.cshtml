@@ -27,14 +27,17 @@
                 var hub = $.connection.mySignalRHub;
 
                 //handler
-                //hub.client.pow = function (message) {
-                //    console.log(message);
-                //};
+                hub.client.broadcastErrorMessage = function (message) {                   
+                    $('#errorMessage').append(message);
+                };
 
-                // Start the connection.
-                //$.connection.hub.start().done(function () {
-                //    console.log('SignalR Started!');
-                //});
+                
+                 //Start the connection.
+                $.connection.hub.start().done(function () {
+                    console.log('SignalR Started!');
+
+                $.connection.mySignalRHub.server.errorMessageBroadcast();
+                });
             });
 
 

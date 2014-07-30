@@ -8,10 +8,16 @@ namespace MvcApplicationToTestSignalR.Hub
 {
     public class MySignalRHub: Microsoft.AspNet.SignalR.Hub
     {
-        public void MyMethod(int n)
+        public void ErrorMessageBroadcast()
         {
-            var res = n * n;
-            Clients.All.Pow(res);
+            try
+            {
+                throw new Exception();
+            }
+            catch
+            {
+                Clients.All.broadcastErrorMessage("Holy guacamole! Best check yo self, you're not looking too good."); 
+            }
         }
     }
 }

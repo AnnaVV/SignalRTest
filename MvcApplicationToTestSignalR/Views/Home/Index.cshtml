@@ -14,12 +14,16 @@
     {
         HttpMethod = "GET",
         InsertionMode = InsertionMode.InsertBefore,
-        UpdateTargetId = "containerForError"
+        UpdateTargetId = "container"
     };
 }
  
 
-@Ajax.ActionLink("Click me!", "About", optionsPost)
-<div id="containerForError">
+@Ajax.ActionLink("Click me!", "About", optionsGet)
+<div id="container">
+
+</div>
+
+<div id="errorMessage" class="alert alert-danger fade in" role="alert">
 
 </div>
