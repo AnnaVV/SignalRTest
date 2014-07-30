@@ -48,3 +48,5 @@ namespace MvcApplicationToTestSignalR.Filters
         }
     }
 }
+
+//public class ExceptionFilterAttribute: ActionFilterAttribute
